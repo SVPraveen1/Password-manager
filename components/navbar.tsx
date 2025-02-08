@@ -3,13 +3,7 @@
 import * as React from "react";
 import { Moon, MoonIcon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 import {
   SignedIn,
@@ -20,7 +14,7 @@ import {
 } from "@clerk/nextjs";
 
 const navbar = () => {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   return (
     <nav className="flex justify-between items-center h-16 bg-chart-2 px-4 text-background">
       <span className="font-bold text-xl">Password-manager</span>
@@ -30,28 +24,19 @@ const navbar = () => {
         <li>Services</li>
       </ul>
       <div className="flex gap-2 justify-center items-center">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <button className="relative border rounded-md w-9 h-9 flex items-center justify-center">
-              <Sun className="h-5 w-5 transition-all dark:hidden" />
-              <Moon className="absolute h-5 w-5 transition-all hidden dark:block" />
-            </button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme("light")}>
-              Light
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("dark")}>
-              Dark
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("system")}>
-              System
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <button
+          onClick={() => {
+            setTheme(theme === "light" ? "dark" : "light");
+          }}
+          className="relative border rounded-md w-9 h-9 flex items-center justify-center"
+        >
+          <Sun className="h-5 w-5 transition-all dark:hidden" />
+          <Moon className="absolute h-5 w-5 transition-all hidden dark:block" />
+        </button>
+
         <SignedOut>
           <SignInButton />
-          <SignUpButton />
+          {/* <SignUpButton /> */}
         </SignedOut>
         <SignedIn>
           <UserButton />
