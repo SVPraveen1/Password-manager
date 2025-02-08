@@ -1,19 +1,17 @@
 "use client";
 
 import * as React from "react";
-import { Moon, MoonIcon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import Link from "next/link";
 
 import {
   SignedIn,
   SignedOut,
   SignInButton,
-  SignUpButton,
   UserButton,
 } from "@clerk/nextjs";
 
-const navbar = () => {
+const Navbar = () => {
   const { theme, setTheme } = useTheme();
   return (
     <nav className="flex justify-between items-center h-16 bg-chart-2 px-4 text-background">
@@ -46,4 +44,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
