@@ -134,10 +134,10 @@ export function AddPassword() {
             <FormItem>
               <FormLabel>password</FormLabel>
               <FormControl>
-                <Input placeholder="password" {...field} />
+                <Input placeholder="password" {...field} type="password" />
               </FormControl>
               <FormDescription>
-                This is your card cvv number
+                Add your password
               </FormDescription>
               <FormMessage />
             </FormItem>

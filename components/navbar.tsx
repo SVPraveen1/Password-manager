@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
+import {  Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import {
@@ -10,16 +10,19 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/nextjs";
+// import About from "../app/about/about";
+import Link from "next/link";
 
 const Navbar = () => {
+  
   const { theme, setTheme } = useTheme();
   return (
     <nav className="flex justify-between items-center h-16 bg-chart-2 px-4 text-background">
-      <span className="font-bold text-xl">Password-manager</span>
+      <span className="font-bold text-xl"><Link href= '/'>Password-manager</Link></span>
       <ul className="flex justify-start items-center gap-5">
-        <li>Home</li>
-        <li>About</li>
-        <li>Services</li>
+        <li><Link href='home'>Home</Link></li>
+        <li><Link href='about'>About</Link></li>
+        <li><Link href='services'>Services</Link></li>
       </ul>
       <div className="flex gap-2 justify-center items-center">
         <button
