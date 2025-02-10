@@ -3,7 +3,7 @@ import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 import { pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 // import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
-import { z } from 'zod';
+// import { z } from 'zod';
 
 // Define the schema
 export const cards = pgTable('cards', {
