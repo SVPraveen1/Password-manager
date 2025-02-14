@@ -4,7 +4,7 @@ A secure password and credit card manager built with Next.js, TypeScript, and Cl
 
 ## Live Demo
 
-[View Live Demo](https://password-manager-4a9s956oh-svpraveen1s-projects.vercel.app)
+[View Live Demo](https://password-manager-svpraveen1s-projects.vercel.app/)
 
 ## Features
 
